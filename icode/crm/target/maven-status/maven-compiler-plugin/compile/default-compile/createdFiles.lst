@@ -1,0 +1,4 @@
+com\diwt\pojo\Role.class
+com\diwt\pojo\User.class
+com\diwt\mapper\UserMapper.class
+com\diwt\pojo\UserLog.class
