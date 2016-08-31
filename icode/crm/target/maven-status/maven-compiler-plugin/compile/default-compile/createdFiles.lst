@@ -1,4 +1,12 @@
+com\diwt\service\UserService.class
 com\diwt\pojo\Role.class
 com\diwt\pojo\User.class
-com\diwt\mapper\UserMapper.class
+com\diwt\dto\JSONResult.class
+com\diwt\service\ShiroRealm.class
+com\diwt\dto\DataTablesResult.class
 com\diwt\pojo\UserLog.class
+com\diwt\controller\HomeController.class
+com\diwt\mapper\RoleMapper.class
+com\diwt\mapper\UserMapper.class
+com\diwt\dto\FlashMessage.class
+com\diwt\controller\UserController.class
