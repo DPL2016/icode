@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="home.html"><i class="fa fa-coffee"></i> CRM</a>
+        <a class="navbar-brand" href="/home"><i class="fa fa-coffee"></i> CRM</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -24,7 +24,7 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 安全退出</a>
+                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> 安全退出</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -36,8 +36,8 @@
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-                <li>
-                    <a href="home.html"><i class="fa fa-dashboard fa-fw"></i> 首页</a>
+                <li class="${param.menu=='home'?'active':''}">
+                    <a href="/home"><i class="fa fa-dashboard fa-fw"></i> 首页</a>
                 </li>
                 <li>
                     <a href="customer.html"><i class="fa fa-users fa-fw"></i> 客户</a>

@@ -38,7 +38,10 @@
 
 <div id="wrapper">
 
-    <%@include file="include/nav.jsp"%>
+    <jsp:include page="include/nav.jsp">
+        <jsp:param name="menu" value="home"/>
+    </jsp:include>
+
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
