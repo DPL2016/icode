@@ -44,9 +44,13 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext*.xml</param-value>
   </context-param>
-  
+
   <error-page>
     <error-code>401</error-code>
     <location>/static/html/401.html</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/static/html/404.html</location>
   </error-page>
 </web-app>

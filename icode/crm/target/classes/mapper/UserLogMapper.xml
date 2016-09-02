@@ -4,7 +4,7 @@
 <mapper namespace="com.diwt.mapper.UerLogMapper">
     <cache/>
     <insert id="save">
-
+      INSERT INTO ssm_crm.t_user_log(logintime, loginip, userid) VALUE (#{logintime},#{loginip},#{userid})
     </insert>
 
 </mapper>

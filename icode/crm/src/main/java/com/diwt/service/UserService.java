@@ -25,5 +25,6 @@ public class UserService {
         userLog.setLoginip(ip);
         userLog.setUserid(ShiroUtil.getCurrentUserID());
         userLog.setLogintime(DateTime.now().toString("yyyy-MM-dd HH:mm"));
+        uerLogMapper.save(userLog);
     }
 }
