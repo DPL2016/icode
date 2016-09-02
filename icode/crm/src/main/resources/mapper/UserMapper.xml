@@ -9,5 +9,26 @@
     <select id="findByTel" resultType="com.diwt.pojo.User">
         SELECT * FROM t_user WHERE tel = #{tel}
     </select>
+    <select id="findByParam" resultType="com.diwt.pojo.User">
+        SELECT * FROM t_user
+        <where>
+            <if test="keyword != null and keyword != ''">
+                username LIKE #{keyword} or tel like #{keyword}
+            </if>
+        </where>
+        order by ${orderColumn} ${orderType}
+        limit ${start},${length}
+    </select>
+    <select id="count" resultType="java.lang.Long">
+         SELECT COUNT(*) FROM t_user
+    </select>
+    <select id="countByParam" resultType="java.lang.Long">
+        SELECT count(*) FROM t_user
+        <where>
+            <if test="keyword != null and keyword != ''">
+                username LIKE #{keyword} or tel like #{keyword}
+            </if>
+        </where>
+    </select>
 
 </mapper>

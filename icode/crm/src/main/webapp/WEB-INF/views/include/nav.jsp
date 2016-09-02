@@ -39,24 +39,24 @@
                 <li class="${param.menu=='home'?'active':''}">
                     <a href="/home"><i class="fa fa-dashboard fa-fw"></i> 首页</a>
                 </li>
-                <li>
-                    <a href="customer.html"><i class="fa fa-users fa-fw"></i> 客户</a>
+                <li class="${param.menu=='customer'?'active':''}">
+                    <a href="/customer"><i class="fa fa-users fa-fw"></i> 客户</a>
                     <!-- /.nav-second-level -->
                 </li>
-                <li>
-                    <a href="record.html"><i class="fa fa-table fa-fw"></i> 跟进</a>
+                <li class="${param.menu=='record'?'active':''}">
+                    <a href="/record"><i class="fa fa-table fa-fw"></i> 跟进</a>
                 </li>
-                <li>
-                    <a href="task.html"><i class="fa fa-edit fa-fw"></i> 待办</a>
+                <li class="${param.menu=='task'?'active':''}">
+                    <a href="/task"><i class="fa fa-edit fa-fw"></i> 待办</a>
                 </li>
-                <li>
-                    <a href="chart.html"><i class="fa fa-bar-chart"></i> 统计</a>
+                <li class="${param.menu=='chart'?'active':''}">
+                    <a href="/chart"><i class="fa fa-bar-chart"></i> 统计</a>
 
                     <!-- /.nav-second-level -->
                 </li>
                 <shiro:hasRole name="管理员">
-                <li>
-                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 用户管理</a>
+                <li class="${param.menu=='admin'?'active':''}">
+                    <a href="/admin"><i class="fa fa-sitemap fa-fw"></i> 用户管理</a>
                 </li>
                 </shiro:hasRole>
             </ul>
