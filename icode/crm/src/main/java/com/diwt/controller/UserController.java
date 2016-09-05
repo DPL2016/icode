@@ -59,6 +59,7 @@ public class UserController {
         param.put("keyword",keyword);
         param.put("orderColumn",orderColumnName);
         param.put("orderType",orderType);
+        param.put("length",length);
         List<User> userList = userService.findByParam(param);
         Long count = userService.countUser();
         Long filterCount = userService.countByParam(param);

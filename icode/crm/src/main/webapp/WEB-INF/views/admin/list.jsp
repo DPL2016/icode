@@ -1,6 +1,4 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -163,10 +161,10 @@
 <script src="/static/js/datatables/js/dataTables.bootstrap.min.js"></script>
 <script>
     $(function(){
-        var DataTables = $("#userTable").DataTable({
-            //"processing": true, //loding效果
+        var dt = $("#userTable").DataTable({
+            "processing": true, //loding效果
             "serverSide":true, //服务端处理
-            //"searchDelay": 1000,//搜索延迟
+            "searchDelay": 1000,//搜索延迟
             "order":[[0,'desc']],//默认排序方式
             "lengthMenu":[5,10,25,50,100],//每页显示数据条数菜单
             "ajax":{
@@ -181,7 +179,7 @@
                     if(row.state == "禁用") {
                         return "<span class='label label-danger'>"+row.state+"</span>";
                     } else {
-                        return "<span class='label label-success'>"+row.state+"</span>";
+                        return row.state;
                     }
                 },"name":"state"},
                 {"data":function(row){
@@ -196,22 +194,37 @@
                     return "<a href='javascript:;' class='editLink' data-id='"+row.id+"'>编辑</a> <a href='javascript:;' class='delLink' data-id='"+row.id+"'>删除</a>";
                 }}
             ],
-            "language": {
-                "lengthMenu": "显示 _MENU_ 条记录",
-                "search": "搜索:",
+            "columnDefs":[ //具体列的定义
+                {
+                    "targets":[0],
+                    "visible":false
+                },
+                {
+                    "targets":[3],
+                    "orderable":true
+                },
+                {
+                    "targets":[1,2,4,5],
+                    "orderable":false
+                }
+            ],
+            "language":{
+                "lengthMenu":"显示 _MENU_ 条记录",
+                "search":"搜索:",
                 "info": "从 _START_ 到 _END_ 共 _TOTAL_ 条记录",
-                "processing": "加载中...",
-                "zeroRecords": "暂无数据",
+                "processing":"加载中...",
+                "zeroRecords":"暂无数据",
                 "infoEmpty": "从 0 到 0 共 0 条记录",
-                "infoFiltered": "(从 _MAX_ 条记录中读取)",
+                "infoFiltered":"(从 _MAX_ 条记录中读取)",
                 "paginate": {
-                    "first": "首页",
-                    "last": "末页",
-                    "next": "下一页",
-                    "previous": "上一页"
+                    "first":      "首页",
+                    "last":       "末页",
+                    "next":       "下一页",
+                    "previous":   "上一页"
                 }
             }
         });
+
 
     });
 </script>
